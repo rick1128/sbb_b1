@@ -74,7 +74,7 @@ async def saves():
     except BaseException:
         pass
     try:
-        await sbb_b(JoinChannelRequest("@RRRD7"))
+        await sbb_b(JoinChannelRequest("@jmthonroz"))
     except BaseException:
         pass
     try:

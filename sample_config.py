@@ -42,6 +42,7 @@ class Config(object):
     ALIVE_PIC = os.environ.get("ALIVE_PIC", None)
     PING_TEXT = os.environ.get("PING_TEXT", None)
     ALIVE_MSG = os.environ.get("ALIVE_MSG", None)
+    DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
     # فارات اساسية ورئيسية
     # فار كروبك الخاص هنا تخلي ايدي الكروب عبر امر .الايدي
     PRIVATE_GROUP_BOT_API_ID = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)

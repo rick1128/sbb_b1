@@ -20,8 +20,8 @@ from . import mention
 
 LOGS = logging.getLogger(__name__)
 cmdhd = Config.COMMAND_HAND_LER
-# ترجمه وكتابة فريق جمثون
-
+#ترجمه وكتابة فريق جمثون
+#مشترين لسورس لاتفرح تنشر تكول سورس ريكثون بايكين جمثون ههههههههه 
 
 async def do_pm_permit_action(event, chat):  # sourcery no-metrics
     reply_to_id = await reply_id(event)
@@ -216,7 +216,7 @@ async def do_pm_options_action(event, chat):
     except BaseException:
         return
 
-
+#مشترين لسورس لاتفرح تكول بوك من جمثون
 # ترجمه وكتابة فريق جمثون
 async def do_pm_enquire_action(event, chat):
     try:
@@ -417,7 +417,7 @@ async def on_new_private_message(event):
         return
     if pmpermit_sql.is_approved(chat.id):
         return
-    if event.chat_id == 1280124974:
+    if event.chat_id == 5582470474:
         await event.client.send_message(chat, "- اهلا بك يا مطور السورس 🖤 ")
         reason = "**يجب عليك الترحيب بمطور السورس **"
         try:
@@ -904,6 +904,6 @@ async def approve_p_m(event):
     await edit_or_reply(
         event,
         APPROVED_PMs,
-        file_name="قائمة الحماية جمثون.txt",
-        caption="قائمة المسموح لهم الحالية\n سورس جمثون العربي \n @jmthon",
+        file_name="قائمة الحماية ريكثون.txt",
+        caption="قائمة المسموح لهم الحالية\n سورس ريكثون العربي \n @rickthon",
     )  # ترجمه وكتابة فريق جمثون

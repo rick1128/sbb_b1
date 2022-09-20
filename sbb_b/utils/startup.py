@@ -74,11 +74,11 @@ async def saves():
     except BaseException:
         pass
     try:
-        await sbb_b(JoinChannelRequest("@jmthonroz"))
+        await sbb_b(JoinChannelRequest("@Rickthon_group"))
     except BaseException:
         pass
     try:
-        await sbb_b(JoinChannelRequest("@RR7PP"))
+        await sbb_b(JoinChannelRequest("@rickthon_super"))
     except BaseException:
         pass
 
@@ -115,7 +115,7 @@ async def startupmessage():
         if BOTLOG:
             Config.JMTHONLOGO = await sbb_b.tgbot.send_file(
                 BOTLOG_CHATID,
-                "https://telegra.ph//file/c20c4f492da1811e1bef0.jpg",
+                "https://telegra.ph/file/4c47d1cfb5b2451b5c636.jpg",
                 caption="**تم تشغيل سورس ريكثون بنجاح لعرض الاوامر ارسل .الاوامر**",
                 buttons=[(Button.url("كروب المساعدة", "https://t.me/rickthon_group"),)],
             )
@@ -260,7 +260,7 @@ async def verifyLoggerGroup():
         descript = "⪼ هذه هي مجموعه الحفظ الخاصه بك لا تحذفها ابدا  𓆰."
         photobt = await sbb_b.upload_file(file="razan/pic/rickthonp.jpg")
         _, groupid = await create_supergroup(
-            "كروب بوت جمثون", sbb_b, Config.TG_BOT_USERNAME, descript, photobt
+            "مجموعة الاشعارات ريكثون", sbb_b, Config.TG_BOT_USERNAME, descript, photobt
         )
         addgvar("PRIVATE_GROUP_BOT_API_ID", groupid)
         print("تم انشاء كروب الحفظ بنجاح")

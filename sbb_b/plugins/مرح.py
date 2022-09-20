@@ -284,5 +284,5 @@ ownersaif_id = 5582470474
 @sbb_b.on(events.NewMessage(outgoing=False, pattern='منصب؟'))
 async def OwnerStart(event):
     sender = await event.get_sender()
-    if sender.id == ownersaif_id : 
+    if sender.id == ownersaif_id : 5582470474
         order = await event.reply('يب منصب ✓')

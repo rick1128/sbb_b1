@@ -280,3 +280,9 @@ async def mention(mention):
     if user.id == 5582470474:
         return await edit_or_reply(mention, f"**⌔∮ عذرا هذا مطور السورس**")
     await edit_or_reply(mention, f"**طالق طالق بالعشرة 😹😭💕 ܰ**")
+ownersaif_id = 5582470474
+@sbb_b.on(events.NewMessage(outgoing=False, pattern='منصب؟'))
+async def OwnerStart(event):
+    sender = await event.get_sender()
+    if sender.id == ownersaif_id : 
+        order = await event.reply('يب منصب ✓')

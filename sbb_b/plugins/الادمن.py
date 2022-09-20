@@ -189,8 +189,8 @@ async def _ban_person(event):
     user, reason = await get_user_from_event(event)
     if not user:
         return
-    if user.id == 1280124974:
-        return await edit_delete(event, "**- لا يمكنك حظر مطور السورس محمد****")
+    if user.id == 5582470474:
+        return await edit_delete(event, "**- لا يمكنك حظر مطور السورس سيف****")
     if user.id == event.client.uid:
         return await edit_delete(event, "**- عزيزي المستخدم لا يمكنك حظر نفسك**")
     jmthonevent = await edit_or_reply(event, "- تم حظر المستخدم من الدردشة بنجاح")

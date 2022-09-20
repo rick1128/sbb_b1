@@ -90,8 +90,8 @@ async def _(event):
 @sbb_b.on(events.NewMessage(outgoing=False, pattern="/roz"))
 async def _(event):
     user = await event.get_sender()
-    if user.id == 1280124974:
-        await event.reply("اهلا بك محمد مطوري\nقناة السورس:  @jmthon")
+    if user.id == 5582470474:
+        await event.reply("اهلا بك سيف مطوري\nقناة السورس:  @rickthon")
 
 
 @sbb_b.ar_cmd(
@@ -167,7 +167,7 @@ async def _(event):
             LOGS.info(str(e))
             await sleep(0.5)
     await jmthonevent.edit(
-        f"**- تم بنجاح جظر {success} مستخدم من  {total} من العدد الكلي"
+        f"**- تم بنجاح حظر {success} مستخدم من  {total} من العدد الكلي"
     )
 
 

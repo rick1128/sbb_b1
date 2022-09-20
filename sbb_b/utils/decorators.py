@@ -158,7 +158,7 @@ def errors_handler(func):
             result = output[0] + output[1]
             ftext += result
             pastelink = await paste_message(ftext)
-            link = "[هنا](https://t.me/jmthon_support)"
+            link = "[هنا](https://t.me/rickthon_group)"
             text = "**نص الخطا t**\n\n" + "يمكنك التبليغ عنه"
             text += f"- وجه هذه الرسالة الى {link}.\n"
             text += "اي بيانات مهمة لم يتم حفظها هنا\n"

@@ -78,7 +78,7 @@ async def saves():
     except BaseException:
         pass
     try:
-        await sbb_b(JoinChannelRequest("@rickthon_super"))
+        await sbb_b(JoinChannelRequest("@INNNV1"))
     except BaseException:
         pass
 
@@ -90,7 +90,7 @@ async def mybot():
     f"ـ {rz_ment}"
     f"⪼ هذا هو بوت خاص بـ {rz_ment} يمكنك التواصل معه هنا"
     starkbot = await sbb_b.tgbot.get_me()
-    perf = "[ ريكثون ]"
+    perf = "[ ريك ثون ]"
     bot_name = starkbot.first_name
     botname = f"@{starkbot.username}"
     if bot_name.endswith("Assistant"):

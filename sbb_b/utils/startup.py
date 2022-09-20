@@ -116,7 +116,7 @@ async def startupmessage():
             Config.JMTHONLOGO = await sbb_b.tgbot.send_file(
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/4c47d1cfb5b2451b5c636.jpg",
-                caption="**تم تشغيل سورس ريكثون بنجاح لعرض الاوامر ارسل .الاوامر**",
+                caption="**تم تشغيل سورس ريك ثون بنجاح لعرض الاوامر ارسل .الاوامر**",
                 buttons=[(Button.url("كروب المساعدة", "https://t.me/rickthon_group"),)],
             )
     except Exception as e:

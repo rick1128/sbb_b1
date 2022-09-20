@@ -178,7 +178,7 @@ async def hi(event):
 @sbb_b.ar_cmd(pattern="م21")
 async def hi(event):
     await event.reply(
-        "فائمة اوامر الفارات:\n\n- فقط ارسل `.بوتي` بعدها ادخل الى البوت واختر قائمة الفارات",
+        "قائمة اوامر الفارات:\n\n- فقط ارسل `.بوتي` بعدها ادخل الى البوت واختر قائمة الفارات",
         link_preview=False,
     )
     await event.delete()

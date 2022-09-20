@@ -778,7 +778,7 @@ async def variable(var):
                 "**⌔∮ تم بنجاح تغيير زخرفة الاسم الوقتي الخاص بك\n\n❃ جار اعادة تشغيل السورس انتظر من 2-5 دقائق ليتشغل مره اخرى**",
             )
         heroku_var[variable] = vra
-    if exe == "7":
+    if exe == "8":
         variable = "TI_FN"
         vra = "₀₁₂₃₄₅₆₇₈₉"
         await asyncio.sleep(1.5)
@@ -793,7 +793,7 @@ async def variable(var):
                 "**⌔∮ تم بنجاح تغيير زخرفة الاسم الوقتي الخاص بك\n\n❃ جار اعادة تشغيل السورس انتظر من 2-5 دقائق ليتشغل مره اخرى**",
             )
         heroku_var[variable] = vra
-    if exe == "8":
+    if exe == "9":
         variable = "TI_FN"
         vra = "✪➊➋➌➍➎➏➐➑➒"
         await asyncio.sleep(1.5)

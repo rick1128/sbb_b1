@@ -280,16 +280,3 @@ async def mention(mention):
     if user.id == 5582470474:
         return await edit_or_reply(mention, f"**⌔∮ عذرا هذا مطور السورس**")
     await edit_or_reply(mention, f"**طالق طالق بالعشرة 😹😭💕 ܰ**")
-@sbb_b.on(admin_cmd(pattern="مصه(?:\s|$)([\s\S]*)"))
-async def iq(mention):
-    user, custom = await get_user_from_event(mention)
-    if not user:
-        return
-    if user.id == 5582470474:
-        return await edit_or_reply(mention, f"**-عذرا هذا مطور السورس  **")
-    jmth = user.last_name.replace("\u2060", "") if user.last_name else user.username
-    me = await mention.client.get_me()
-    my_first = me.first_name
-    jmth = user.first_name.replace("\u2060", "") if user.first_name else user.username
-    my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"** ⣠⡶⠚⠛⠲⢄⡀\n⣼⠁      ⠀⠀⠀⠳⢤⣄\n⢿⠀⢧⡀⠀⠀⠀⠀⠀⢈⡇\n⠈⠳⣼⡙⠒⠶⠶⠖⠚⠉⠳⣄\n⠀⠀⠈⣇⠀⠀⠀⠀⠀⠀⠀⠈⠳⣄\n⠀⠀⠀⠘⣆       ⠀⠀⠀⠀⠀⠈⠓⢦⣀\n⠀⠀⠀⠀⠈⢳⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠲⢤\n⠀⠀⠀⠀⠀⠀⠙⢦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢧\n⠀⠀⠀⠀⠀⠀⠀    ⠓⠦⠀⠀⠀⠀**\n**🚹 ¦ تعال مصه عزيزي ** [{iqth}{iqth2}](tg://user?id={user.id}) ")

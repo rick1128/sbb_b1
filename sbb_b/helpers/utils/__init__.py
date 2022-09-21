@@ -6,7 +6,7 @@ check = 0
 while flag:
     try:
         from . import format as _format
-        from . import utils as _jmthonutils
+        from . import utils as _rickthonutils
         from .events import *
         from .format import *
         from .utils import *

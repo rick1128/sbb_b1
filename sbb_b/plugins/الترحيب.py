@@ -118,7 +118,7 @@ async def save_welcome(event):
     await edit_or_reply("- لقد حدث خطأ اثناء وضع الترحيب لهذه الدردشة")
 
 
-@sbb_b.ar_cmd(pattern="ازالة الترحيبات$")
+@sbb_b.ar_cmd(pattern="حذف الترحيبات$")
 async def del_welcome(event):
     if rm_welcome_setting(event.chat_id) is True:
         await edit_or_reply(event, "**- تم حذف جميع رسائل الترحيب المضافة**")

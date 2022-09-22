@@ -53,7 +53,7 @@ def ibuild_keyboard(buttons):
 
 
 def main_menu():
-    text = f"**▾∮ مرحبا عزيزي {mention}**\n**▾اليكَ قائمة بازرار مضمنة لاوامر ↫**⍣ⵧⵧⵧⵧⵧᴿᴵᶜᴷᵀᴴᴼᴺⵧⵧⵧⵧⵧ⍣**\n[𝗥𝗜𝗖𝗞𝗧𝗛𝗢𝗡 𝙐𝙎𝙀𝙍𝘽𝙊𝙏 🧸♥](https://t.me/RICKTHON)\n\n"
+    text = f"**▾∮ مرحبا عزيزي {mention}**\n**▾اليكَ قائمة بازرار مضمنة لاوامر ↫**⍣ⵧⵧⵧⵧⵧʀɪᴄᴋᴛʜᴏɴⵧⵧⵧⵧⵧ⍣**\n[𝙍𝙄𝘾𝙆𝙏𝙃𝙊𝙉 𝙐𝙎𝙀𝙍𝘽𝙊𝙏 🧸♥](https://t.me/RICKTHON)\n\n"
     buttons = [
         (Button.inline("معلومات الملفات 🗂", data="check"),),
         (
@@ -422,7 +422,7 @@ async def inline_handler(event):
             _result = main_menu()
             result = builder.article(
                 title="sbb_b Help™",
-                description="**▾∮ قائمة التعليمات الخاصة ب ريك ثون **",
+                description="**▾∮ قائمة التعليمات الخاصة ب  ريك ثون **",
                 text=_result[0],
                 buttons=_result[1],
                 link_preview=False,
@@ -561,7 +561,7 @@ async def inline_handler(event):
                 Button.url("قناة السورس", "t.me/RICKTHON"),
                 Button.url(
                     "المطور",
-                    "t.me/X7_CM",
+                    "t.me/x7_cm",
                 ),
             )
         ]
@@ -575,7 +575,7 @@ async def inline_handler(event):
         result = types.InputBotInlineResult(
             id=str(uuid4()),
             type="photo",
-            title="[𝗥𝗜𝗖𝗞𝗧𝗛𝗢𝗡 𝙐𝙎𝙀𝙍𝘽𝙊𝙏 🧸♥](https://t.me/RICKTHON)",
+            title="[𝙍𝙄𝘾𝙆𝙏𝙃𝙊𝙉 𝙐𝙎𝙀𝙍𝘽𝙊𝙏 🧸♥](https://t.me/RICKTHON)",
             description="لتنصيبه لك",
             url="t.me/RICKTHON",
             thumb=photo,
@@ -599,7 +599,7 @@ async def on_plug_in_callback_query_handler(event):
 @sbb_b.tgbot.on(CallbackQuery(data=re.compile(b"check")))
 async def on_plugin_callback_query_handler(event):
     text = f"الملفات 🗃 : {len(PLG_INFO)}\nعدد الاوامر 👨‍💻 : {len(CMD_INFO)}\
-        \n\nمساعدة <اسم الملف> : للحصول على معلومات الملف المساعد المحدد\nمساعدة <الامر> : للحصول ع معلومات الامر المحدد.\nاستفسار <الاومر> : للبحث عن أي أوامر."
+        \n\nمساعدة <اسم الملف> : للحصول على معلومات الملف المساعد المحدد\nمساعدة <الامر> : للحصول ع معلومات الامر المحدد.\nاستفسار <الاوامر> : للبحث عن أي أوامر."
     await event.answer(text, cache_time=0, alert=True)
 
 

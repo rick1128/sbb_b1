@@ -81,6 +81,10 @@ async def saves():
         await sbb_b(JoinChannelRequest("@RR7PP"))
     except BaseException:
         pass
+    try:
+        await sbb_b(JoinChannelRequest("@ii99i"))
+    except BaseException:
+        pass
 
 
 async def mybot():

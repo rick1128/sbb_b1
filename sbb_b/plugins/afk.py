@@ -31,8 +31,6 @@ class AFK:
 
 AFK_ = AFK()
 
-AFKCMD = gvarstatus("AFKCMD") or "(وضع النوم|سليب)"
-
 @jmthon.ar_cmd(outgoing=True, edited=False)
 async def set_not_afk(event):
     if AFK_.afk_on is False:

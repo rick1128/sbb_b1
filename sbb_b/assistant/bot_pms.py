@@ -114,7 +114,7 @@ async def bot_start(event):
                 Button.url("السورس", "https://t.me/rickthon"),
                 Button.url(
                     "الشرح",
-                    "https://youtu.be/",
+                    "https://youtu.be/eXaxtjZPEj8",
                 ),
             )
         ]

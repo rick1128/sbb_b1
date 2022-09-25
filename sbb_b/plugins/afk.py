@@ -11,7 +11,6 @@ from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.tools import media_type
 from ..helpers.utils import _format
 from . import BOTLOG, BOTLOG_CHATID
-from ..sql_helper.globals import gvarstatus
 
 LOGS = logging.getLogger(__name__)
 
@@ -159,7 +158,7 @@ async def on_afk(event):
             )
 
 
-@jmthon.ar_cmd(pattern=f"{AFKCMD}(?:\s|$)([\s\S]*)")
+@jmthon.ar_cmd(pattern="سليب(?:\s|$)([\s\S]*)")
 async def _(event):
     AFK_.USERAFK_ON = {}
     AFK_.afk_time = None

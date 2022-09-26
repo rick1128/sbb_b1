@@ -3,7 +3,7 @@ from os import remove
 from sbb_b import sbb_b
 
 
-@sbb_b.ar_cmd(pattern="(جلب الصورة|ذاتية)")
+@sbb_b.ar_cmd(pattern="(سي|ذاتية)")
 async def datea(event):
     await event.delete()
     scertpic = await event.get_reply_message()

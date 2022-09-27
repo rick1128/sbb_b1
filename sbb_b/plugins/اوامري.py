@@ -53,14 +53,14 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                     Button.inline("⌔  الانتحال والتقليد ⌔ ", data="uscuxrz"),
                 ],
             ]
-            if JEP_IC and JEP_IC.endswith((".jpg", ".png", "gif", "mp4")):
+            if ROZ_IC and ROZ_IC.endswith((".jpg", ".png", "gif", "mp4")):
                 result = builder.photo(
-                    JEP_IC, text=ROE, buttons=buttons, link_preview=False
+                    ROZ_IC, text=ROE, buttons=buttons, link_preview=False
                 )
-            elif JEP_IC:
+            elif ROZ_IC:
                 result = builder.document(
-                    JEP_IC,
-                    title="JEPTHON",
+                    ROZ_IC,
+                    title="JMTHON",
                     text=ROE,
                     buttons=buttons,
                     link_preview=False,
@@ -79,7 +79,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
 async def repo(event):
     if event.fwd_from:
         return
-   rickthon = Config.TG_BOT_USERNAME
+  sbb_b = Config.TG_BOT_USERNAME
     if event.reply_to_msg_id:
         await event.get_reply_message()
     response = await bot.inline_query(lMl10l, "اوامري")

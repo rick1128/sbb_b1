@@ -18,8 +18,8 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        await sbb_b.get_me()
-        if query.startswith("اوامري") and event.query.user_id == sbb_b.uid:
+        await bot.get_me()
+        if query.startswith("اوامري") and event.query.user_id == bot.uid:
             buttons = [
                 [Button.inline("معلومات جمثون", data="AOMRDB")],
                 [
@@ -47,13 +47,15 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             )
         await event.answer([result] if result else None)
 
-
-@sbb_b.ar_cmd(pattern="اوامري")
+@bot.on(admin_cmd(outgoing=True, pattern="اوامري"))
+#@sbb_b.ar_cmd(pattern="اوامري")
 async def repo(event):
+    if event.fwd_from:
+        return
     start = Config.TG_BOT_USERNAME
     if event.reply_to_msg_id:
         await event.get_reply_message()
-    response = await sbb_b.inline_query(start, "اوامري")
+    response = await bot.inline_query(start, "اوامري")
     await response[0].click(event.chat_id)
     await event.delete()
 
@@ -352,6 +354,7 @@ async def _(event):
      Button.inline("رجوع", data="jrzst")
      ]]
     await event.edit(ROE, buttons=buttons)
+
 
 @sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"admin2")))
 @check_owner

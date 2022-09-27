@@ -6,7 +6,7 @@ from telethon.events import CallbackQuery
 from sbb_b import sbb_b 
 from ..core import check_owner
 from ..Config import Config
-from razan.CMD import *
+from razan.CMD.aomari import *
 
 ROE = "** هـذه هي قائمة اوامـر سـورس جمثون **"
 ROZADM = "من هنا يمكنك ايجاد جميع"
@@ -18,8 +18,8 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        await bot.get_me()
-        if query.startswith("اوامري") and event.query.user_id == bot.uid:
+        await sbb_b.get_me()
+        if query.startswith("اوامري") and event.query.user_id == sbb_b.uid:
             buttons = [
                 [Button.inline("معلومات جمثون", data="AOMRDB")],
                 [
@@ -47,15 +47,13 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             )
         await event.answer([result] if result else None)
 
-@bot.on(admin_cmd(outgoing=True, pattern="اوامري"))
-#@sbb_b.ar_cmd(pattern="اوامري")
+
+@sbb_b.ar_cmd(pattern="اوامري")
 async def repo(event):
-    if event.fwd_from:
-        return
     start = Config.TG_BOT_USERNAME
     if event.reply_to_msg_id:
         await event.get_reply_message()
-    response = await bot.inline_query(start, "اوامري")
+    response = await sbb_b.inline_query(start, "اوامري")
     await response[0].click(event.chat_id)
     await event.delete()
 

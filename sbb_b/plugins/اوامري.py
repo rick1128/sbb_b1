@@ -67,7 +67,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                 )
             else:
                 result = builder.article(
-                    title="JEPTHON",
+                    title="JMTHON",
                     text=ROE,
                     buttons=buttons,
                     link_preview=False,
@@ -79,7 +79,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
 async def repo(event):
     if event.fwd_from:
         return
-  sbb_b = Config.TG_BOT_USERNAME
+sbb_b = Config.TG_BOT_USERNAME
     if event.reply_to_msg_id:
         await event.get_reply_message()
     response = await bot.inline_query(lMl10l, "اوامري")

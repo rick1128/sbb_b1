@@ -20,7 +20,7 @@ __copyright__ = f" حقوق سورس ريك ثون (C) 2020 - 2022  {__author__}
 sbb_b.version = __version__
 sbb_b.tgbot.version = __version__
 LOGS = logging.getLogger("سورس ريك ثون")
-bot = sbb_b0
+bot = sbb_b
 
 StartTime = time.time()
 jmthonversion = "5.1.1"

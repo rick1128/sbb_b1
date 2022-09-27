@@ -148,7 +148,7 @@ async def _(event):
     buttons = [
     [
       Button.inline("رجوع", data="toolsed1")]]
-    await event.edit(ALMKD5D, buttons=buttons)
+    await event.edit(ALMKD5D, buttons=buttons, link_preview=False)
 
 
 @sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"NOAZAJ4")))

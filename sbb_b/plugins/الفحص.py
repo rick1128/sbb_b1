@@ -23,7 +23,7 @@ from ..sql_helper.globals import gvarstatus
 from . import mention
 
 
-@sbb_b0.ar_cmd(pattern="فحص$")
+@sbb_b.ar_cmd(pattern="فحص$")
 async def amireallyalive(event):
     reply_to_id = await reply_id(event)
     ANIME = None

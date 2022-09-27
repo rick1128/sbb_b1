@@ -82,12 +82,12 @@ async def repo(event):
 sbb_b = Config.TG_BOT_USERNAME
     if event.reply_to_msg_id:
         await event.get_reply_message()
-    response = await bot.inline_query(lMl10l, "اوامري")
+    response = await bot.inline_query(sbb_b, "اوامري")
     await response[0].click(event.chat_id)
     await event.delete()
 
 
-@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"jepiq0")))
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"sbb_b")))
 @check_owner
 async def _(event):
     buttons = [

@@ -9,7 +9,7 @@ from sbb_b import sbb_b
 from ..core import check_owner
 from ..Config import Config
 
-JM_IC = "https://telegra.ph/file/aa4c57c31967de50dc32a.jpg"
+ROZ_IC = "https://telegra.ph/file/aa4c57c31967de50dc32a.jpg"
 ROE = "**⌔  هـذه هي قائمة اوامـر سـورس ريكثون ⌔ **"
 
 if Config.TG_BOT_USERNAME is not None and tgbot is not None:

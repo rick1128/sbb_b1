@@ -20,7 +20,7 @@ games = {}
 aki_photo = "https://telegra.ph/file/b0ff07069e8637783fdae.jpg"
 
 
-@sbb_b.ar_cmd(pattern="اكينوتر(?:\s|$)([\s\S]*)")
+@sbb_b.ar_cmd(pattern="المارد(?:\s|$)([\s\S]*)")
 async def rozdo(e):
     sta = akinator.Akinator()
     games.update({e.chat_id: {e.id: sta}})

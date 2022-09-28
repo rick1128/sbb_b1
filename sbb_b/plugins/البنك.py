@@ -1,13 +1,18 @@
+# ======================================================================================================================================
+# ping -> edited ping with pic by  @RR7PP
+#كتابه محمد جمثون  😂😂
+
 import os
 from datetime import datetime
 
-from Config import Config
-
 from sbb_b import sbb_b
 
-from . import edit_or_reply, hmention, reply_id
+#
+from . import hmention, reply_id
 
-PING_PIC = Config.PING_PIC or "https://telegra.ph/file/502a2c9751c3c06222c51.jpg"
+PING_PIC = os.environ.get("PING_PIC") or (
+    "https://telegra.ph/file/502a2c9751c3c06222c51.jpg"
+)
 
 JM_TXT = os.environ.get("PING_TEXT") or "مـن لا يتعلم من الماضي لا يرحمه المستقبل  . 🖤"
 
@@ -37,3 +42,6 @@ async def _(event):
         await event.edit_or_reply(
             event, "<code>يجـب اضـافة متـغير `PING_PIC`  اولا  f<code>", "html"
         )
+
+
+# ======================================================================================================================================

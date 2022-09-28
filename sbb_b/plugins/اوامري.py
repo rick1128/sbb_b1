@@ -383,7 +383,7 @@ async def _(event):
     Button.inline("المحظورين", data="ALIVEMHA"),
     ],
     [
-    Button.inline("كتم", data="bancmd"),
+    Button.inline("كتم", data="ALIVEcatm"),
     Button.inline("الغاء كتم", data="unmutecmd"),
     Button.inline("طرد", data="KICKCMD"),
     ],
@@ -393,7 +393,7 @@ async def _(event):
     Button.inline("رفع مشرف", data="ALIVEadmin"),
     ],
     [Button.inline("التالي", data="admin2"),
-     Button.inline("رجوع", data="jrzst")
+     Button.inline("رجوع", data="ADMSS4")
      ],
      [
      Button.inline("القائمة الرئيسية", data="MAIN")
@@ -429,6 +429,14 @@ async def _(event):
     await event.edit(ROE, buttons=buttons, link_preview=False)
 
 
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"ALIVETFL")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="admin2")]]
+    await event.edit(ALIVETFL, buttons=buttons, link_preview=False)
+
 @sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"admi3")))
 @check_owner
 async def _(event):
@@ -441,11 +449,11 @@ async def _(event):
     [
     Button.inline("ايقاف الترحيب", data="ALIVEundf"),
     Button.inline("الترحيبات", data="ALIVETRS"),
-    Button.inline("منع كلمة", data="ALIVEADV"),
+    Button.inline("منع كلمة", data="ALMN3CMD"),
     ],
     [
     Button.inline("الغاء منع", data="A3ALMN3"),
-    Button.inline("قائمة المنع", data="ALIVEgma"),
+    Button.inline("قائمة المنع", data="LISTBLCK"),
     Button.inline("مسح المحظورين", data="UMBLCTR"),
     ],
     [Button.inline("التالي", data="ADMSS4"),
@@ -455,6 +463,15 @@ async def _(event):
      Button.inline("القائمة الرئيسية", data="MAIN")
      ]]
     await event.edit(ROE, buttons=buttons, link_preview=False)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"ALMN3CMD")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="admi3")]]
+    await event.edit(ALMN3CMD, buttons=buttons, link_preview=False)
 
 
 @sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"ADMSS4")))
@@ -688,7 +705,7 @@ async def _(event):
       Button.inline("رجوع", data="admin2")]]
     await event.edit(ALIVEnzl, buttons=buttons, link_preview=False)
 
-@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"ALIVEnzl")))
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"ALIVESOR")))
 @check_owner
 async def _(event):
     buttons = [
@@ -705,7 +722,7 @@ async def _(event):
     await event.edit(ALIVEsod, buttons=buttons, link_preview=False)
 
 
-@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"ALIVEbin")))
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"ALIVEtnadmin")))
 @check_owner
 async def _(event):
     buttons = [
@@ -744,7 +761,7 @@ async def _(event):
     buttons = [
     [
       Button.inline("رجوع", data="admincmd_s")]]
-    await event.edit(ALIVEMHA, buttons=buttons, link_preview=False)
+    await event.edit(KICKCMD, buttons=buttons, link_preview=False)
 
 @sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"ALIVEMHA")))
 @check_owner
@@ -772,7 +789,7 @@ async def _(event):
       Button.inline("رجوع", data="admincmd_s")]]
     await event.edit(ALIVEunban, buttons=buttons, link_preview=False)
 
-@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"mutecmd")))
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"ALIVEcatm")))
 @check_owner
 async def _(event):
     buttons = [

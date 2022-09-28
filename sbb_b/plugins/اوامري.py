@@ -21,7 +21,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         await sbb_b.get_me()
         if query.startswith("اوامري") and event.query.user_id == sbb_b.uid:
             buttons = [
-                [Button.inline("معلومات جمثون", data="AOMRDB")],
+                [Button.inline("معلومات ريك ثون", data="AOMRDB")],
                 [
                     Button.inline("البوت", data="eeeeq"),
                     Button.inline("الكروب", data="admincmd_s")
@@ -62,7 +62,7 @@ async def repo(event):
 @check_owner
 async def _(event):
     butze = [
-                [Button.inline("معلومات جمثون", data="AOMRDB")],
+                [Button.inline("معلومات ريك ثون", data="AOMRDB")],
                 [
                     Button.inline("البوت", data="sssss"),
                     Button.inline("الكروب", data="admincmd_s")

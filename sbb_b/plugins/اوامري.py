@@ -8,7 +8,7 @@ from ..core import check_owner
 from ..Config import Config
 from razan.CMD.aomari import *
 
-ROE = "** هـذه هي قائمة اوامـر سـورس جمثون **"
+ROE = "** هـذه هي قائمة اوامـر سـورس ريك ثون **"
 ROZADM = "من هنا يمكنك ايجاد جميع"
 RAZAN = Config.TG_BOT_USERNAME
 

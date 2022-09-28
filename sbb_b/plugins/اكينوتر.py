@@ -82,6 +82,7 @@ async def rooks(e):
     bts = [bts, cts]
     await e.edit(text, buttons=bts)
 
+#جميع الحقوق لـ سورس ريك ثون تخمط بدون ذكر حقوق اهينك 
 
 @sbb_b.tgbot.on(InlineQuery)
 async def rozak(e):

@@ -46,7 +46,7 @@ async def daj(e):
     mid = int(dt[1])
     await e.edit("**⌔∮ جار التحقق الان انتظر**")
     try:
-        qu = games[ch][mid].start_game(child_mode=False)
+        qu = games[ch][mid].start_game(child_mode=True)
     except KeyError:
         return await e.answer("تم إنهاء اللعبة", alert=True)
     bts = [Button.inline(o, f"aka_{adt}_{o}") for o in ["Yes", "No", "Idk"]]

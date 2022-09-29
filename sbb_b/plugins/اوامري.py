@@ -35,7 +35,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                 ],
                 [
                     Button.inline("الاكسترا", data="EXTRACMD"),
-                    Button.inline(" الفارات", data="jrzst"),
+                    Button.inline(" الفارات", data="VARJMTHON"),
                 ]
             ]
             result = builder.article(
@@ -75,10 +75,290 @@ async def _(event):
                 ],
                 [
                     Button.inline("الاكسترا", data="EXTRACMD"),
-                    Button.inline(" الفارات", data="jrzst"),
+                    Button.inline(" الفارات", data="VARJMTHON"),
                 ]
     ]
     await event.edit(ROE, buttons=butze)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"VARJMTHON")))
+async def varssett(event):
+    await event.edit(
+        "من هنا يمكنك عرض شروحات الفارات:",
+        buttons=[
+            [
+                Button.inline("فارات الفحص", data="alivevar"),
+                Button.inline("فارات الحماية", data="pmvars"),
+            ],
+            [Button.inline("فارات البروفايل", data="namevar")],
+        ],
+    )
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"namevar")))
+async def varssett(event):
+    await event.edit(
+        "من هنا يمكنك عرض شروحات فارات الاسم والبايو والخ:",
+        buttons=[
+            [
+                Button.inline("اسم حسابك", data="nameprvr"),
+                Button.inline("زخرفة الارقام", data="numlokvar"),
+            ],
+            [
+                Button.inline("نبذة حسابك", data="biolokvar"),
+                Button.inline("صورة حسابك", data="phovarlok"),
+            ],
+            [
+                Button.inline("رمز الاسم", data="symnamvar"),
+            ],
+        ],
+    )
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"symnamvar")))
+async def varssett(event):
+    await event.edit(
+        """نوع الفار: فارات البروفايل
+الفار الحالي: فار الرمز
+الامر:             `.وضع الرمز`
+الشرح :  يقوم هذا الامر بوضع رمز بداية اسم حسابك عند تشغيل امر  .اسم وقتي
+الاستخدام : تقوم بالرد على الرمز بالامر   `.وضع الرمز`
+ملاحظة : يمكنك استخدام الاوامر في اي دردشة او محادثة
+اوامر فارات سورس جمثون @jmthon""",
+        buttons=[
+            [Button.inline("رجوع", data="namevar")],
+        ],
+    )
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"phovarlok")))
+async def varssett(event):
+    await event.edit(
+        """نوع الفار: فارات البروفايل
+الفار الحالي: فار الصورة
+الامر:             `.وضع الصورة`
+الشرح :  يقوم هذا الامر بوضع الصورة الخاصة بحسابك عند تشغيل امر الصورة الوقتية
+الاستخدام : تقوم بالرد على رابط الصورة بالامر   `.وضع البايو`
+*يمكنك استخدا الزخرفة او اللغة الانكليزية او العربية الخ..
+* كيفية جلب رابط الصورة؟
+-بالرد على الصورة المراد استخراج منها الرابط ب  `.تلكراف ميديا`
+ملاحظة : يمكنك استخدام الاوامر في اي دردشة او محادثة
+اوامر فارات سورس جمثون @jmthon""",
+        buttons=[
+            [Button.inline("رجوع", data="namevar")],
+        ],
+    )
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"biolokvar")))
+async def varssett(event):
+    await event.edit(
+        """نوع الفار: فارات البروفايل
+الفار الحالي: فار البايو
+الامر:             `.وضع البايو`
+الشرح :  يقوم هذا الامر بوضع النبذه او البايو عند تشغيل امر البايو الوقتي
+الاستخدام : تقوم بالرد على البايو بالامر   `.وضع البايو`
+*يمكنك استخدا الزخرفة او اللغة الانكليزية او العربية الخ..
+ملاحظة : يمكنك استخدام الاوامر في اي دردشة او محادثة
+اوامر فارات سورس جمثون @jmthon""",
+        buttons=[
+            [Button.inline("رجوع", data="namevar")],
+        ],
+    )
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"numlokvar")))
+async def varssett(event):
+    await event.edit(
+        """نوع الفار: فارات البروفايل
+الفار الحالي: فار الزخرفة
+
+.زخرفة الوقت 1
+.زخرفة الوقت 2
+.زخرفة الوقت 3
+.زخرفة الوقت 4
+.زخرفة الوقت 5
+.زخرفة الوقت 6
+.زخرفة الوقت 7
+.زخرفة الوقت 8
+.زخرفة الوقت 9
+
+ملاحظة : يمكنك استخدام الاوامر في اي دردشة او محادثة
+اوامر فارات سورس جمثون @jmthon""",
+        buttons=[
+            [Button.inline("رجوع", data="namevar")],
+        ],
+    )
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"nameprvr")))
+async def varssett(event):
+    await event.edit(
+        """نوع الفار: فارات البروفايل
+الفار الحالي: فار الاسم
+
+الامر:             `.وضع الاسم`
+
+الشرح :  يقوم هذا الامر بوضع اسم حسابك للعديد من الاوامر مثل الفحص والخ
+الاستخدام : تقوم بالرد على اسمك بالامر   `.وضع الاسم`
+
+*يمكنك استخدا الزخرفة او اللغة الانكليزية او العربية الخ..
+ملاحظة : يمكنك استخدام الاوامر في اي دردشة او محادثة
+اوامر فارات سورس جمثون @jmthon""",
+        buttons=[
+            [Button.inline("رجوع", data="namevar")],
+        ],
+    )
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"pmvars")))
+async def varssett(event):
+    await event.edit(
+        "من هنا يمكنك عرض شروحات فارات الحماية:",
+        buttons=[
+            [
+                Button.inline("صورة الحماية", data="picpmvar"),
+                Button.inline("كليشة الحماية", data="pmvarkish"),
+            ],
+            [
+                Button.inline("كليشة الحظر", data="banklish"),
+                Button.inline("عدد التحذيرات", data="warnvars"),
+            ],
+        ],
+    )
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"banklish")))
+async def varssett(event):
+    await event.edit(
+        """نوع الفار: فارات الحماية
+الفار الحالي: فار كليشة الحظر
+الامر:             `.وضع كليشة الحظر`
+الشرح :  يقوم هذا الامر بتغيير الكليشة (الكلام) التي تظهر عندما تنتهي تحذيرات الشخص ويتم حظره
+الاستخدام : تقوم بالرد على الكليشة التي تريد وضعها بالامر   `.وضع كليشة الحظر `
+* يمكنك كتابة اي كليشة مثلا: عزيزي المستخدم تم حظرك 
+ملاحظة : يمكنك استخدام الاوامر في اي دردشة او محادثة
+اوامر فارات سورس جمثون @jmthon""",
+        buttons=[
+            [Button.inline("رجوع", data="pmvars")],
+        ],
+    )
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"warnvars")))
+async def varssett(event):
+    await event.edit(
+        """نوع الفار: فارات الحماية
+الفار الحالي: فار عدد التحذيرات
+الامر:             `.وضع عدد التحذيرات`
+الشرح :  يقوم هذا الامر بتغيير عدد التحذيرات التي يقوم السورس بتحذير المستخدم بها قبل حظره
+الاستخدام : تقوم بالرد على عدد التحذيرات كرقم  بالامر   `.وضع عدد التحذيرات `
+ملاحظة : يمكنك استخدام الاوامر في اي دردشة او محادثة
+اوامر فارات سورس جمثون @jmthon""",
+        buttons=[
+            [Button.inline("رجوع", data="pmvars")],
+        ],
+    )
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"pmvarkish")))
+async def varssett(event):
+    await event.edit(
+        """نوع الفار: فارات الحماية
+الفار الحالي: فار كليشة الحماية
+الامر:             `.وضع كليشة الحماية`
+الشرح :  يقوم هذا الامر بتغيير الكليشة (الكلام) التي تظهر عندما يكون امر الحماية شغال ويراسلك احد
+الاستخدام : تقوم بالرد على الكليشة التي تريد وضعها بالامر   `.وضع كليشة الحماية `
+* يمكنك الحصول على  كليشة جاهزة من هذه القناة @JJOTT
+ملاحظة : يمكنك استخدام الاوامر في اي دردشة او محادثة
+اوامر فارات سورس جمثون @jmthon""",
+        buttons=[
+            [Button.inline("رجوع", data="pmvars")],
+        ],
+    )
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"picpmvar")))
+async def varssett(event):
+    await event.edit(
+        """نوع الفار: فارات الحماية
+الفار الحالي: فار صورة الحماية
+الامر:             `.وضع صورة الحماية`
+الشرح :  يقوم هذا الامر بتغيير او وضع الصورة التي تظهر عندما يكون امر الحماية  شغال ويراسلك احد
+الاستخدام : تقوم بالرد على رابط الصورة التي تريد وضعها بالامر   `.وضع صورة الحماية` 
+* كيفية جلب رابط الصورة؟
+-بالرد على الصورة المراد استخراج منها الرابط ب  `.تلكراف ميديا`
+ملاحظة : **يمكنك استخدام الاوامر في اي دردشة او محادثة**
+اوامر فارات سورس جمثون @jmthon""",
+        buttons=[
+            [Button.inline("رجوع", data="pmvars")],
+        ],
+    )
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"alivevar")))
+async def varssett(event):
+    await event.edit(
+        "من هنا يمكنك عرض شروحات فارات الفحص:",
+        buttons=[
+            [
+                Button.inline("صورة الفحص", data="picvars"),
+                Button.inline("كليشة الفحص", data="kleshalive"),
+            ],
+            [Button.inline("رمز الفحص", data="rmzalive")],
+        ],
+    )
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"picvars")))
+async def varssett(event):
+    await event.edit(
+        """نوع الفار: فارات الفحص
+الفار الحالي: فار صورة الفحص
+الامر:             `.وضع صورة الفحص`
+الشرح :  يقوم هذا الامر بتغيير او وضع الصورة التي تظهر عند ارسال  امر   `.فحص`
+الاستخدام : تقوم بالرد على رابط الصورة التي تريد وضعها بالامر   `.وضع صورة الفحص` 
+* كيفية جلب رابط الصورة؟
+-بالرد على الصورة المراد استخراج منها الرابط ب  `.تلكراف ميديا`
+ملاحظة : **يمكنك استخدام الاوامر في اي دردشة او محادثة**
+اوامر فارات سورس جمثون @jmthon""",
+        buttons=[
+            [Button.inline("رجوع", data="alivevar")],
+        ],
+    )
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"kleshalive")))
+async def varssett(event):
+    await event.edit(
+        """ نوع الفار: فارات الفحص
+الفار الحالي: فار كليشة الفحص
+الامر:             `.وضع كليشة الفحص`
+الشرح :  يقوم هذا الامر بتغيير الكليشة (الكلام) التي تظهر عند ارسال  امر  `.فحص`
+الاستخدام : تقوم بالرد على الكليشة التي تريد وضعها بالامر   `.وضع كليشة الفحص `
+* يمكنك الحصول على  كليشة جاهزة من هذه القناة @JJOTT
+ملاحظة : يمكنك استخدام الاوامر في اي دردشة او محادثة
+اوامر فارات سورس جمثون @jmthon""",
+        buttons=[
+            [Button.inline("رجوع", data="alivevar")],
+        ],
+    )
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"rmzalive")))
+async def varssett(event):
+    await event.edit(
+        """نوع الفار: فارات الفحص
+الفار الحالي: فار رمز الفحص
+الامر:             `.وضع رمز الفحص`
+الشرح :  يقوم هذا الامر بتغيير الرمز  الذي يظهر عند ارسال  امر  `.فحص`
+الاستخدام : تقوم بالرد على الرمز التي تريد وضعه بالامر   `.وضع رمز الفحص `
+ملاحظة : يمكنك استخدام الاوامر في اي دردشة او محادثة
+اوامر فارات سورس جمثون @jmthon""",
+        buttons=[
+            [Button.inline("رجوع", data="alivevar")],
+        ],
+    )
 
 
 @sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"EXTRACMD")))

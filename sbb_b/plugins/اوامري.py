@@ -96,7 +96,7 @@ async def _(event):
                     Button.inline("الارسال الوهمي", data="SACAMF"),
                 ],
                 [
-                    Button.inline("حماية الخاص", data="ALNTDOS"),
+                    Button.inline("حماية الخاص", data="HEMAIREF"),
                     Button.inline("الذاتية", data="DATECMD"),
                     Button.inline("البروفيل", data="PROFUIECMD"),
                 ],
@@ -114,6 +114,23 @@ async def _(event):
                 ]]
     await event.edit(ROE, buttons=butze)
 
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"HEMAIREF")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="EXTRACMD")]]
+    await event.edit(HEMAIREF, buttons=buttons, link_preview=False)
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"KTABAFE")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="EXTRACMD")]]
+    await event.edit(KTABAFE, buttons=buttons, link_preview=False)
 
 @sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"EXTRAC7")))
 @check_owner
@@ -135,12 +152,34 @@ async def _(event):
                     Button.inline("تحويل ملصق", data="PICYEYS"),
                     Button.inline("تحويل صوتي", data="JISORO"),
                 ],
+                [   
+                    Button.inline("التالي", data="EXTRACMD"),
+                    Button.inline("رجوع", data="EXTRACMD")
+                ],
                 [
                     Button.inline("القائمة الرئيسية", data="MAIN")
                 ]]
     await event.edit(ROE, buttons=butze)
 
 
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"PICYEYS")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="EXTRAC7")]]
+    await event.edit(PICYEYS, buttons=buttons, link_preview=False)
+
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"AJMTHOEF")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="EXTRAC7")]]
+    await event.edit(AJMTHOEF, buttons=buttons, link_preview=False)
 
 @sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"JISORO")))
 @check_owner

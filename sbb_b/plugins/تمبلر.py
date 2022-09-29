@@ -1,4 +1,4 @@
-from sbb_b0 import sbb_b
+from sbb_b import sbb_b
 #تخمط بدون ذكر حقوق اهينك @x7_cm ~ @qqqq4t
 from ..core.managers import edit_or_reply
 @sbb_b.on(admin_cmd(pattern="رموز1(?:\s|$)([\s\S]*)"))

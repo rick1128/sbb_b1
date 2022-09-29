@@ -31,11 +31,10 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                     Button.inline("الاداوات", data="toolsed1"),
                 ],
                 [
-                    Button.inline("متفرقات", data="tslrzj"),
-                    Button.inline(" الترحيبات والردود ", data="r7brz"),
+                    Button.inline("التحميل", data="tslrzj"),
                 ],
                 [
-                    Button.inline("الاكسترا", data="krrznd"),
+                    Button.inline("الاكسترا", data="EXTRACMD"),
                     Button.inline(" الفارات", data="jrzst"),
                 ]
             ]
@@ -64,7 +63,7 @@ async def _(event):
     butze = [
                 [Button.inline("معلومات جمثون", data="AOMRDB")],
                 [
-                    Button.inline("البوت", data="BOTCMD4"),
+                    Button.inline("البوت", data="eeeeq"),
                     Button.inline("الكروب", data="admincmd_s")
                 ],
                 [
@@ -72,15 +71,205 @@ async def _(event):
                     Button.inline("الاداوات", data="toolsed1"),
                 ],
                 [
-                    Button.inline("متفرقات", data="tslrzj"),
-                    Button.inline(" الترحيبات والردود ", data="r7brz"),
+                    Button.inline("التحميل", data="tslrzj"),
                 ],
                 [
-                    Button.inline("الاكسترا", data="krrznd"),
+                    Button.inline("الاكسترا", data="EXTRACMD"),
                     Button.inline(" الفارات", data="jrzst"),
                 ]
     ]
     await event.edit(ROE, buttons=butze)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"EXTRACMD")))
+@check_owner
+async def _(event):
+    butze = [
+                [
+                    Button.inline("الترجمة", data="ALIVETRG"),
+                    Button.inline("التوجيه", data="SAVETECXT"),
+                    Button.inline("حالتي", data="R7ALTIE"),
+                ],
+                [
+                    Button.inline("الحاسبة", data="CALCATERE"),
+                    Button.inline("كورونا", data="COROONA"),
+                    Button.inline("الارسال الوهمي", data="SACAMF"),
+                ],
+                [
+                    Button.inline("حماية الخاص", data="ALNTDOS"),
+                    Button.inline("الذاتية", data="DATECMD"),
+                    Button.inline("البروفيل", data="PROFUIECMD"),
+                ],
+                [
+                    Button.inline("الصلاة", data="SALACMD"),
+                    Button.inline("الكتابة", data="KTABAFE"),
+                    Button.inline("التاك و المنشن", data="TAGE4E"),
+                ],
+                [   
+                    Button.inline("التالي", data="EXTRAC7"),
+                    Button.inline("رجوع", data="EXTRAC7")
+                ],
+                [
+                    Button.inline("القائمة الرئيسية", data="MAIN")
+                ]]
+    await event.edit(ROE, buttons=butze)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"EXTRAC7")))
+@check_owner
+async def _(event):
+    butze = [
+                [
+                    Button.inline("ملصق متحرك", data="VASCHER"),
+                    Button.inline("تحويل صورة", data="STIKERPIC"),
+                ],
+                [
+                    Button.inline("تحويل متحركة", data="TOGIDEF"),
+                    Button.inline("تحويل لملف", data="ITESRAZAN"),
+                ],
+                [
+                    Button.inline("تحويل لكتابة", data="LTABAMEKF"),
+                    Button.inline("الملف لصورة", data="AJMTHOEF"),
+                ],
+                [
+                    Button.inline("تحويل ملصق", data="PICYEYS"),
+                    Button.inline("تحويل صوتي", data="JISORO"),
+                ],
+                [
+                    Button.inline("القائمة الرئيسية", data="MAIN")
+                ]]
+    await event.edit(ROE, buttons=butze)
+
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"JISORO")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="EXTRAC7")]]
+    await event.edit(JISORO, buttons=buttons, link_preview=False)
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"LTABAMEKF")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="EXTRAC7")]]
+    await event.edit(LTABAMEKF, buttons=buttons, link_preview=False)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"ITESRAZAN")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="EXTRAC7")]]
+    await event.edit(ITESRAZAN, buttons=buttons, link_preview=False)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"TOGIDEF")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="EXTRAC7")]]
+    await event.edit(TOGIDEF, buttons=buttons, link_preview=False)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"STIKERPIC")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="EXTRAC7")]]
+    await event.edit(STIKERPIC, buttons=buttons, link_preview=False)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"VASCHER")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="EXTRAC7")]]
+    await event.edit(VASCHER, buttons=buttons, link_preview=False)
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"TAGE4E")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="EXTRACMD")]]
+    await event.edit(TAGE4E, buttons=buttons, link_preview=False)
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"PROFUIECMD")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="EXTRACMD")]]
+    await event.edit(PROFUIECMD, buttons=buttons, link_preview=False)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"SACAMF")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="EXTRACMD")]]
+    await event.edit(SACAMF, buttons=buttons, link_preview=False)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"R7ALTIE")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="EXTRACMD")]]
+    await event.edit(R7ALTIE, buttons=buttons, link_preview=False)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"SALACMD")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="EXTRACMD")]]
+    await event.edit(SALACMD, buttons=buttons, link_preview=False)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"DATECMD")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="EXTRACMD")]]
+    await event.edit(DATECMD, buttons=buttons, link_preview=False)
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"COROONA")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="EXTRACMD")]]
+    await event.edit(COROONA, buttons=buttons, link_preview=False)
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"SAVETECXT")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="EXTRACMD")]]
+    await event.edit(SAVETECXT, buttons=buttons, link_preview=False)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"ALIVETRG")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="EXTRACMD")]]
+    await event.edit(ALIVETRG, buttons=buttons, link_preview=False)
 
 
 @sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"BOTCMD4")))

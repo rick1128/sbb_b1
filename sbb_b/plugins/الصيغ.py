@@ -394,7 +394,7 @@ async def _(event):
             ),
         )
     except Exception as e:
-        await edit_or_reply(roz, e)
+        await event.edit(str(e))
     else:
         end = datetime.datetime.now()
         ms = (end - start).seconds

@@ -361,7 +361,7 @@ async def _(event):
             os.remove(files)
 
 
-@sbb_b.ar_cmd(pattern="تحويل الى (mp3|voice)")
+@sbb_b.ar_cmd(pattern="تحويل الى (صوتي|بصمة)")
 async def _(event):
     if not event.reply_to_msg_id:
         await edit_or_reply(event, "**- يجب عليك الرد على الميديا المراد تحويلها**")
@@ -393,7 +393,7 @@ async def _(event):
         command_to_run = []
         voice_note = False
         supports_streaming = False
-        if input_str == "voice":
+        if input_str == "بصمة":
             new_required_file_caption = f"voice_{str(round(time.time()))}.opus"
             new_required_file_name = (
                 f"{Config.TMP_DOWNLOAD_DIRECTORY}/{new_required_file_caption}"
@@ -415,7 +415,7 @@ async def _(event):
             ]
             voice_note = True
             supports_streaming = True
-        elif input_str == "mp3":
+        elif input_str == "صوتي":
             new_required_file_caption = f"mp3_{str(round(time.time()))}.mp3"
             new_required_file_name = (
                 f"{Config.TMP_DOWNLOAD_DIRECTORY}/{new_required_file_caption}"

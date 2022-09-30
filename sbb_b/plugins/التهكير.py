@@ -1,10 +1,8 @@
 import asyncio
 
-from sbb_b import sbb_b
-
+from sbb_b import ALIVE_NAME, sbb_b
 from sbb_b.core.managers import edit_or_reply
 from sbb_b.helpers.utils import _format
-from sbb_b import ALIVE_NAME
 
 
 @sbb_b.ar_cmd(pattern="تهكير$")

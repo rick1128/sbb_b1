@@ -1,6 +1,8 @@
 from sqlalchemy import Column, String, delete
 from sqlalchemy.orm.exc import NoResultFound
+
 from . import BASE, SESSION
+
 
 class grism(BASE):
     __tablename__ = "autogrpe"
@@ -27,15 +29,17 @@ def autogroup(
     SESSION.close()
     return True
 
-def del_autogroup():   
+
+def del_autogroup():
     to_check = get_autogroup()
     if not to_check:
         return False
     stmt = delete(grism)
     SESSION.execute(stmt)
     SESSION.commit()
-    #SESSION.close()
+    # SESSION.close()
     return stmt
+
 
 def get_autogroup():
     try:

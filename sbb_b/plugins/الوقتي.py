@@ -12,8 +12,8 @@ from telethon.tl import functions
 
 from ..Config import Config
 from ..helpers.utils import _format
+from ..sql_helper.gavstats import autogroup, del_autogroup, get_autogroup
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
-from ..sql_helper.gavstats import autogroup, get_autogroup, del_autogroup
 from . import edit_delete, logging, sbb_b
 
 NAME = "jmthon"
@@ -103,13 +103,17 @@ async def autonegrp():
         name = f"{NAME} {HM}"
         LOGS.info(name)
         try:
-            await sbb_b(functions.messages.EditChatTitleRequest(channel=await sbb_b.get_entity(int(group)), title=name))
+            await sbb_b(
+                functions.messages.EditChatTitleRequest(
+                    channel=await sbb_b.get_entity(int(group)), title=name
+                )
+            )
         except FloodWaitError as ex:
             LOGS.warning(str(ex))
             await asyncio.sleep(ex.seconds)
         await asyncio.sleep(CHANGE_TIME)
-        
-        
+
+
 async def autoname_loop():
     while AUTONAMESTART := gvarstatus("autoname") == "true":
         HM = time.strftime("%I:%M")
@@ -125,7 +129,6 @@ async def autoname_loop():
             LOGS.warning(str(ex))
             await asyncio.sleep(ex.seconds)
         await asyncio.sleep(CHANGE_TIME)
-
 
 
 async def autobio_loop():
@@ -157,8 +160,8 @@ async def _(event):
         await autonegrp()
     else:
         return await edit_delete(event, "- يستخدم هذا الامر للمجموعة او القناة فقط")
-    
-    
+
+
 @sbb_b.ar_cmd(pattern="الصورة الوقتية$")
 async def _(event):
     downloader = SmartDL(digitalpfp, digitalpic_path, progress_bar=False)
@@ -233,8 +236,8 @@ async def _(event):
         return await edit_delete(event, "**- البايو الوقتي غير شغال اصلا**")
     if input_str == "وقتي كروب" or input_str == "وقتية دردشة":
         if get_autogroup() is not None:
-           del_autogroup()
-           return await edit_delete(event, "**- تم بنجاح ايقاف الدردشة الوقتية**")
+            del_autogroup()
+            return await edit_delete(event, "**- تم بنجاح ايقاف الدردشة الوقتية**")
         return await edit_delete(event, "**- الدردشة الوقتية غير شغالة اصلا**")
     END_CMDS = [
         "الصورة الوقتية",

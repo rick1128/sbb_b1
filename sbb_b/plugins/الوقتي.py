@@ -7,7 +7,7 @@ from datetime import datetime
 
 from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
-from telethon.errors import FloodWaitError
+from telethon.errors import FloodWaitError, ChatAdminRequiredError, ChannelInvalidError
 from telethon.tl import functions
 
 from ..Config import Config

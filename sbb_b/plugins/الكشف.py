@@ -1,24 +1,16 @@
-import html
 import os
-import base64
 
-from telethon.tl.functions.messages import ImportChatInviteRequest as Get
-from telethon.tl.types import MessageEntityMentionName
-
-from requests import get
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
+from telethon.tl.types import MessageEntityMentionName
 
 from sbb_b import sbb_b
-from sbb_b.core.logger import logging
-
 from sbb_b.Config import Config
-from sbb_b.core.managers import edit_or_reply, edit_delete
-from sbb_b.helpers import reply_id
-from sbb_b.sql_helper.globals import gvarstatus
-from sbb_b.plugins import spamwatch
+from sbb_b.core.logger import logging
+from sbb_b.core.managers import edit_or_reply
 
 LOGS = logging.getLogger(__name__)
+
 
 async def get_user_from_event(event):
     if event.reply_to_msg_id:
@@ -55,10 +47,9 @@ async def fetch_info(replied_user, event):
         GetUserPhotosRequest(user_id=replied_user.id, offset=42, max_id=0, limit=80)
     )
     replied_user_profile_photos_count = "⌔∮ هذا المستخدم لم يضع اي صورة"
-    dc_id = "Can't get dc id"
     try:
         replied_user_profile_photos_count = replied_user_profile_photos.count
-        dc_id = replied_user.photo.dc_id
+        replied_user.photo.dc_id
     except AttributeError:
         pass
     user_id = replied_user.id
@@ -67,9 +58,9 @@ async def fetch_info(replied_user, event):
     common_chat = FullUser.common_chats_count
     username = replied_user.username
     user_bio = FullUser.about
-    is_bot = replied_user.bot
-    restricted = replied_user.restricted
-    verified = replied_user.verified
+    replied_user.bot
+    replied_user.restricted
+    replied_user.verified
     photo = await event.client.download_profile_photo(
         user_id,
         Config.TMP_DOWNLOAD_DIRECTORY + str(user_id) + ".jpg",
@@ -91,11 +82,11 @@ async def fetch_info(replied_user, event):
     rozrtba = (
         ".「 مـالك الحساب  」."
         if user_id == (await event.client.get_me()).id
-        and user_id != 1694386561
         and user_id != 5582470474
         and user_id != 818514313
+        and user_id != 1184002727
         else rozrtba
-    )    
+    )
     caption = " \n"
     caption += f"╽<b>- الاسـم ⇜ </b> {full_name}\n"
     caption += f"╽<b>- المـعـرف ⇜ </b> {username}\n"
@@ -108,6 +99,7 @@ async def fetch_info(replied_user, event):
     caption += f'<a href="tg://user?id={user_id}">{first_name}</a>\n'
     return photo, caption
 
+
 @sbb_b.ar_cmd(pattern="ايدي(?: |$)(.*)")
 async def who(event):
     roz = await edit_or_reply(event, "**⌔∮ جار التعرف على المستخدم انتظر قليلا**")
@@ -117,7 +109,9 @@ async def who(event):
     try:
         photo, caption = await fetch_info(replied_user, event)
     except AttributeError:
-        return await edit_or_reply(roz,  "**⌔∮ لم يتم العثور على معلومات لهذا المستخدم **")
+        return await edit_or_reply(
+            roz, "**⌔∮ لم يتم العثور على معلومات لهذا المستخدم **"
+        )
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
         message_id_to_reply = None
@@ -136,72 +130,6 @@ async def who(event):
         await roz.delete()
     except TypeError:
         await roz.edit(caption, parse_mode="html")
-# يحيى
-@sbb_b.ar_cmd(
-    pattern="كشف(?:\s|$)([\s\S]*)",
-    command=("كشف", plugin_category),
-    info={
-        "header": "Gets information of an user such as restrictions ban by spamwatch or cas.",
-        "description": "That is like whether he banned is spamwatch or cas and small info like groups in common, dc ..etc.",
-        "usage": "{tr}userinfo <username/userid/reply>",
-    },
-)
-async def _(event):
-    "Gets information of an user such as restrictions ban by spamwatch or cas"
-    replied_user = await get_user_from_event(event)
-    if not replied_user:
-        return
-    catevent = await edit_or_reply(event, "⌯︙جار إحضار معلومات المستخدم اننظر قليلا ⚒️")
-    replied_user = await event.client(GetFullUserRequest(replied_user.id))
-    user_id = replied_user.users[0].id
-    first_name = html.escape(replied_user.users[0].first_name)
-    if first_name is not None:
-        # some weird people (like me) have more than 4096 characters in their
-        # names
-        first_name = first_name.replace("\u2060", "")
-    # inspired by https://telegram.dog/afsaI181
-    common_chats = 1
-    try:
-        dc_id, location = get_input_location(replied_user.profile_photo)
-    except Exception:
-        dc_id = "Couldn't fetch DC ID!"
-    if spamwatch:
-        ban = spamwatch.get_ban(user_id)
-        if ban:
-            sw = f"**Spamwatch Banned :** `True` \n       **-**🤷‍♂️**Reason : **`{ban.reason}`"
-        else:
-            sw = f"**Spamwatch Banned :** `False`"
-    else:
-        sw = "**Spamwatch Banned :**`Not Connected`"
-    try:
-        casurl = "https://api.cas.chat/check?user_id={}".format(user_id)
-        data = get(casurl).json()
-    except Exception as e:
-        LOGS.info(e)
-        data = None
-    if data:
-        if data["ok"]:
-            cas = "**Antispam(CAS) Banned :** `True`"
-        else:
-            cas = "**Antispam(CAS) Banned :** `False`"
-    else:
-        cas = "**Antispam(CAS) Banned :** `Couldn't Fetch`"
-    caption = """**معلومات المسـتخدم[{}](tg://user?id={}):
-   ⌔︙⚕️ الايدي: **`{}`
-   ⌔︙👥**المجموعات المشتركه : **`{}`
-   ⌔︙🌏**رقم قاعده البيانات : **`{}`
-   ⌔︙🔏**هل هو حساب موثق  : **`{}`
-""".format(
-        first_name,
-        user_id,
-        user_id,
-        common_chats,
-        dc_id,
-        replied_user.users[0].restricted,
-        sw,
-        cas,
-    )
-    await edit_or_reply(catevent, caption)
 
 
 @sbb_b.ar_cmd(pattern="رابط الحساب(?:\s|$)([\s\S]*)")

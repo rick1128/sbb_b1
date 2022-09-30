@@ -109,7 +109,9 @@ async def autonegrp():
                 )
             )
         except ChatAdminRequiredError:
-            await sbb_b.tgbot.send_message(BOTLOG_CHATID, "**- يجب ان يكون لديك صلاحيات تغير اسم الدردشة**")
+            await sbb_b.tgbot.send_message(
+                BOTLOG_CHATID, "**- يجب ان يكون لديك صلاحيات تغير اسم الدردشة**"
+            )
         except ChannelInvalidError:
             return
         except FloodWaitError:

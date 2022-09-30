@@ -12,8 +12,11 @@ from telethon.tl import functions
 
 from ..Config import Config
 from ..helpers.utils import _format
+from ..sql_helper.gavstats import autogroup, del_autogroup, get_autogroup
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from . import edit_delete, logging, sbb_b
+
+NAME = "jmthon"
 
 DEFAULTUSERBIO = Config.DEFAULT_BIO or " ﴿ لا تَحزَن إِنَّ اللَّهَ مَعَنا ﴾  "
 DEFAULTUSER = gvarstatus("DEFAULT_NAME") or Config.ALIVE_NAME
@@ -88,6 +91,29 @@ async def digitalpicloop():
         DIGITALPICSTART = gvarstatus("digitalpic") == "true"
 
 
+async def autonegrp():
+    group = get_autogroup()
+    AUTONAMESTART = group != None
+    while AUTONAMESTART:
+        HM = time.strftime("%I:%M")
+        for normal in HM:
+            if normal in normzltext:
+                namefont = namerzfont[normzltext.index(normal)]
+                HM = HM.replace(normal, namefont)
+        name = f"{NAME} {HM}"
+        LOGS.info(name)
+        try:
+            await sbb_b(
+                functions.messages.EditChatTitleRequest(
+                    channel=await sbb_b.get_entity(int(group)), title=name
+                )
+            )
+        except FloodWaitError as ex:
+            LOGS.warning(str(ex))
+            await asyncio.sleep(ex.seconds)
+        await asyncio.sleep(CHANGE_TIME)
+
+
 async def autoname_loop():
     while AUTONAMESTART := gvarstatus("autoname") == "true":
         HM = time.strftime("%I:%M")
@@ -120,6 +146,20 @@ async def autobio_loop():
             LOGS.warning(str(ex))
             await asyncio.sleep(ex.seconds)
         await asyncio.sleep(CHANGE_TIME)
+
+
+@sbb_b.ar_cmd(pattern="دردشة وقتية$")
+async def _(event):
+    group = get_autogroup()
+    if event.is_group or event.is_channel:
+        if group is not None and group == str(event.chat_id):
+            return await edit_delete(event, "**- الدردشة الوقتية شغالة بالأصل**")
+        chat = event.chat_id
+        autogroup(str(chat))
+        await edit_delete(event, "**- تم بنجاح تشغيل الدردشة الوقتية**")
+        await autonegrp()
+    else:
+        return await edit_delete(event, "- يستخدم هذا الامر للمجموعة او القناة فقط")
 
 
 @sbb_b.ar_cmd(pattern="الصورة الوقتية$")
@@ -194,6 +234,11 @@ async def _(event):
             )
             return await edit_delete(event, "**- تم بنجاح ايقاف البايو الوقتي**")
         return await edit_delete(event, "**- البايو الوقتي غير شغال اصلا**")
+    if input_str == "وقتي كروب" or input_str == "وقتية دردشة":
+        if get_autogroup() is not None:
+            del_autogroup()
+            return await edit_delete(event, "**- تم بنجاح ايقاف الدردشة الوقتية**")
+        return await edit_delete(event, "**- الدردشة الوقتية غير شغالة اصلا**")
     END_CMDS = [
         "الصورة الوقتية",
         "الصورة الوقتيه",
@@ -202,6 +247,8 @@ async def _(event):
         "صورة وقتية",
         "صوره وقتيه",
         "اسم وقتي",
+        "كروب وقتي",
+        "دردشة وقتية",
         "اسم وقتي",
         "اسم الوقتي",
         "الاسم وقتي",
@@ -218,5 +265,6 @@ async def _(event):
 
 
 sbb_b.loop.create_task(digitalpicloop())
+sbb_b.loop.create_task(autonegrp())
 sbb_b.loop.create_task(autoname_loop())
 sbb_b.loop.create_task(autobio_loop())

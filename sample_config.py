@@ -66,6 +66,7 @@ class Config(object):
         or 0
     )
     TIME_JM = os.environ.get("TIME_JM", None)
+    GROUPNAME = os.environ.get("GROUPNAME", None)
     # Custom vars for userbot
     # هنا ايدي قناتك الي بيها ملفات اضافيه اذا تحب تضيف
     PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL") or 0)

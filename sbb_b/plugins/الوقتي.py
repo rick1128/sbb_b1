@@ -104,7 +104,7 @@ async def autonegrp():
         LOGS.info(name)
         try:
             await sbb_b(
-                functions.messages.EditChatTitleRequest(
+                functions.channels.EditChatTitleRequest(
                     channel=await sbb_b.get_entity(int(group)), title=name
                 )
             )

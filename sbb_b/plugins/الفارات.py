@@ -58,6 +58,20 @@ async def variable(var):
                 "**⌔∮ تم بنجاح تغيير الوقت الخاص بك\n\n❃ جار اعادة تشغيل السورس انتظر من 2-5 دقائق ليتشغل مره اخرى**",
             )
         heroku_var[variable] = vra
+    if exe == "الكروب":
+        variable = "GROUPNAME"
+        await asyncio.sleep(1.5)
+        if variable in heroku_var:
+            await edit_or_reply(
+                var,
+                "**⌔∮ تم بنجاح تغيير اسم الكروب الخاص بك\n\n❃ جار اعادة تشغيل السورس انتظر من 2-5 دقائق ليتشغل مره اخرى**",
+            )
+        else:
+            await edit_or_reply(
+                var,
+                "**⌔∮ تم بنجاح تغيير اسم الكروب الخاص بك\n\n❃ جار اعادة تشغيل السورس انتظر من 2-5 دقائق ليتشغل مره اخرى**",
+            )
+        heroku_var[variable] = vra
     if exe == "رمز الاسم":
         variable = "TIME_JM"
         await asyncio.sleep(1)

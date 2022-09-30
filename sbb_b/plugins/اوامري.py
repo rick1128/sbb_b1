@@ -514,6 +514,16 @@ async def _(event):
                 ]]
     await event.edit(ROE, buttons=butze)
 
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"INSTAGRAMCMD")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="DOWMANLODE4")]]
+    await event.edit(INSTAGRAMCMD, buttons=buttons, link_preview=False)
+
+
 @sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"YOUTUBECMD")))
 @check_owner
 async def _(event):

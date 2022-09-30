@@ -108,10 +108,14 @@ async def autonegrp():
                     channel=await sbb_b.get_entity(int(group)), title=name
                 )
             )
-        except FloodWaitError as ex:
-            LOGS.warning(str(ex))
-            await asyncio.sleep(ex.seconds)
+        except ChatAdminRequiredError:
+            await sbb_b.tgbot.send_message(BOTLOG_CHATID, "**- يجب ان يكون لديك صلاحيات تغير اسم الدردشة**")
+        except ChannelInvalidError:
+            return
+        except FloodWaitError:
+            LOGS.warning("اكو فلود ويت على حسابك")
         await asyncio.sleep(CHANGE_TIME)
+        AUTONAMESTAR = get_autogroup() != None
 
 
 async def autoname_loop():

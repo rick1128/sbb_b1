@@ -16,7 +16,7 @@ from ..sql_helper.gavstats import autogroup, del_autogroup, get_autogroup
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from . import edit_delete, logging, sbb_b
 
-NAME = "jmthon"
+NAME = "rickthon"
 
 DEFAULTUSERBIO = Config.DEFAULT_BIO or " ﴿ لا تَحزَن إِنَّ اللَّهَ مَعَنا ﴾  "
 DEFAULTUSER = gvarstatus("DEFAULT_NAME") or Config.ALIVE_NAME

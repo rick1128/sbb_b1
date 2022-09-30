@@ -31,7 +31,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                     Button.inline("الاداوات", data="toolsed1"),
                 ],
                 [
-                    Button.inline("التحميل", data="tslrzj"),
+                    Button.inline("التحميل", data="DOWMANLODE4"),
                 ],
                 [
                     Button.inline("الاكسترا", data="EXTRACMD"),
@@ -71,7 +71,7 @@ async def _(event):
                     Button.inline("الاداوات", data="toolsed1"),
                 ],
                 [
-                    Button.inline("التحميل", data="tslrzj"),
+                    Button.inline("التحميل", data="DOWMANLODE4"),
                 ],
                 [
                     Button.inline("الاكسترا", data="EXTRACMD"),
@@ -488,6 +488,97 @@ async def _(event):
                     Button.inline("القائمة الرئيسية", data="MAIN")
                 ]]
     await event.edit(ROE, buttons=butze)
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"DOWMANLODE4")))
+@check_owner
+async def _(event):
+    butze = [
+                [
+                    Button.inline("تحميل فيديو", data="YOUTUBECCMD"),
+                    Button.inline("تحميل صوتي", data="YOUTUBECMD"),
+                ],
+                [
+                    Button.inline("بحث", data="ALIVETSM"),
+                    Button.inline("فيديو", data="ALIVEFDO"),
+                ],
+                [
+                    Button.inline("انستا", data="INSTAGRAMCMD"),
+                    Button.inline("بينترست", data="BENTRSTCMD"),
+                ],
+                [
+                    Button.inline("نتائج بحث", data="YIOFDD"),
+                    Button.inline("تحميل صور", data="PICSERACJ"),
+                ],
+                [
+                    Button.inline("القائمة الرئيسية", data="MAIN")
+                ]]
+    await event.edit(ROE, buttons=butze)
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"YOUTUBECMD")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="DOWMANLODE4")]]
+    await event.edit(YOUTUBECMD, buttons=buttons, link_preview=False)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"YOUTUBECCMD")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="DOWMANLODE4")]]
+    await event.edit(YOUTUBECCMD, buttons=buttons, link_preview=False)
+
+
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"ALIVETSM")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="DOWMANLODE4")]]
+    await event.edit(ALIVETSM, buttons=buttons, link_preview=False)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"ALIVEFDO")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="DOWMANLODE4")]]
+    await event.edit(ALIVEFDO, buttons=buttons, link_preview=False)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"BENTRSTCMD")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="DOWMANLODE4")]]
+    await event.edit(BENTRSTCMD, buttons=buttons, link_preview=False)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"YIOFDD")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="DOWMANLODE4")]]
+    await event.edit(YIOFDD, buttons=buttons, link_preview=False)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"PICSERACJ")))
+@check_owner
+async def _(event):
+    buttons = [
+    [
+      Button.inline("رجوع", data="DOWMANLODE4")]]
+    await event.edit(PICSERACJ, buttons=buttons, link_preview=False)
+
+
 
 
 

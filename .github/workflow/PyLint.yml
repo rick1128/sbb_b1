@@ -31,5 +31,5 @@ jobs:
           commit_options: '--no-verify'
           repository: .
           commit_user_name: rick1128
-          commit_user_email: sad66ik@gmail.com
-          commit_author: rick1128<sad66ik@gmail.com>
+          commit_user_email: rick1128@gmail.com
+          commit_author: rick1128<rick1128@gmail.com>

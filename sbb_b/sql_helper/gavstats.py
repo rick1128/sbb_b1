@@ -1,6 +1,8 @@
 from sqlalchemy import Column, String, delete
 from sqlalchemy.orm.exc import NoResultFound
+
 from . import BASE, SESSION
+
 
 class gavestaus(BASE):
     __tablename__ = "gavstats"
@@ -25,7 +27,8 @@ def addvar(jasem):
     SESSION.close()
     return True
 
-def del_addvar():   
+
+def del_addvar():
     to_check = get_addvar()
     if not to_check:
         return False
@@ -33,6 +36,7 @@ def del_addvar():
     SESSION.execute(adder)
     SESSION.commit()
     return adder
+
 
 def get_addvar():
     try:

@@ -294,7 +294,7 @@ async def varssett(event):
 الشرح :  يقوم هذا الامر بتغيير الكليشة (الكلام) التي تظهر عندما يكون امر الحماية شغال ويراسلك احد
 الاستخدام : تقوم بالرد على الكليشة التي تريد وضعها بالامر   `.وضع كليشة الحماية `
 
-* يمكنك الحصول على  كليشة جاهزة من هذه القناة @JJOTT
+* يمكنك الحصول على  كليشة جاهزة من هذه القناة @RICKTHON2
 ملاحظة : يمكنك استخدام الاوامر في اي دردشة او محادثة
 اوامر فارات سورس ريك ثون @rickthon""",
         buttons=[
@@ -370,7 +370,7 @@ async def varssett(event):
 الشرح :  يقوم هذا الامر بتغيير الكليشة (الكلام) التي تظهر عند ارسال  امر  `.فحص`
 الاستخدام : تقوم بالرد على الكليشة التي تريد وضعها بالامر   `.وضع كليشة الفحص `
 
-* يمكنك الحصول على  كليشة جاهزة من هذه القناة @rickthon2
+* يمكنك الحصول على  كليشة جاهزة من هذه القناة @RICKTHON2
 ملاحظة : يمكنك استخدام الاوامر في اي دردشة او محادثة
 اوامر فارات سورس ريك ثون @rickthon""",
         buttons=[
@@ -772,7 +772,7 @@ async def _(event):
         ],
         [
             Button.inline("التالي", data="TOOLCMD2"),
-            Button.inline("رجوع", data="TOOLCMD2"),
+            Button.inline("رجوع", data="TOOLSR3"),
         ],
         [Button.inline("القائمة الرئيسية", data="MAIN")],
     ]
@@ -796,6 +796,55 @@ async def _(event):
 #######################################################################
 
 
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"TOOLSR3")))
+@check_owner
+async def _(event):
+    buttons = [
+        [
+            Button.inline("اسم وقتي", data="ALWKTECMD"),
+            Button.inline("بايو وقتي", data="BIOEIDS"),
+        ],
+        [
+            Button.inline("الصورة الوقتية", data="DKZUTOPIC"),
+            Button.inline("دردشة وقتية", data="GROIPSDE"),
+        ],
+        [
+            Button.inline("التالي", data="toolsed1"),
+            Button.inline("رجوع", data="TOOLCMD2"),
+        ],
+        [Button.inline("القائمة الرئيسية", data="MAIN")],
+    ]
+    await event.edit(ROE, buttons=buttons, link_preview=False)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"GROIPSDE")))
+@check_owner
+async def _(event):
+    buttons = [[Button.inline("رجوع", data="TOOLSR3")]]
+    await event.edit(GROIPSDE, buttons=buttons, link_preview=False)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"DKZUTOPIC")))
+@check_owner
+async def _(event):
+    buttons = [[Button.inline("رجوع", data="TOOLSR3")]]
+    await event.edit(DKZUTOPIC, buttons=buttons, link_preview=False)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"BIOEIDS")))
+@check_owner
+async def _(event):
+    buttons = [[Button.inline("رجوع", data="TOOLSR3")]]
+    await event.edit(BIOEIDS, buttons=buttons, link_preview=False)
+
+
+@sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"ALWKTECMD")))
+@check_owner
+async def _(event):
+    buttons = [[Button.inline("رجوع", data="TOOLSR3")]]
+    await event.edit(ALWKTECMD, buttons=buttons, link_preview=False)
+
+
 @sbb_b.tgbot.on(CallbackQuery(data=re.compile(rb"TOOLCMD2")))
 @check_owner
 async def _(event):
@@ -815,7 +864,7 @@ async def _(event):
             Button.inline("وسبام", data="FGKHEF8"),
         ],
         [
-            Button.inline("التالي", data="toolsed1"),
+            Button.inline("التالي", data="TOOLSR3"),
             Button.inline("رجوع", data="toolsed1"),
         ],
         [Button.inline("القائمة الرئيسية", data="MAIN")],

@@ -1,3 +1,4 @@
+
 import re
 
 from telethon.utils import get_display_name
@@ -51,7 +52,7 @@ async def _(event):
 
 
 @sbb_b.ar_cmd(
-    pattern="rmblacklist(?:\s|$)([\s\S]*)",
+    pattern="الغاء منع(?:\s|$)([\s\S]*)",
     require_admin=True,
 )
 async def _(event):

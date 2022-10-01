@@ -16,7 +16,7 @@ from ..sql_helper.gavstats import autogroup, del_autogroup, get_autogroup
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from . import edit_delete, logging, sbb_b
 
-NAME = Config.GROUPNAME or ""
+NAME = Config.GROUPNAME or "."
 
 DEFAULTUSERBIO = Config.DEFAULT_BIO or " ﴿ لا تَحزَن إِنَّ اللَّهَ مَعَنا ﴾  "
 DEFAULTUSER = gvarstatus("DEFAULT_NAME") or Config.ALIVE_NAME
@@ -93,8 +93,8 @@ async def digitalpicloop():
 
 async def autonegrp():
     group = get_autogroup()
-    AUTONAMESTART = group != None
-    while AUTONAMESTART:
+    AUTONEGRPSTART = group != None
+    while AUTONEGRPSTART:
         HM = time.strftime("%I:%M")
         for normal in HM:
             if normal in normzltext:
@@ -117,7 +117,7 @@ async def autonegrp():
         except FloodWaitError:
             LOGS.warning("اكو فلود ويت على حسابك")
         await asyncio.sleep(CHANGE_TIME)
-        AUTONAMESTAR = get_autogroup() != None
+        AUTONEGRPSTART = get_autogroup() != None
 
 
 async def autoname_loop():
@@ -241,8 +241,14 @@ async def _(event):
             return await edit_delete(event, "**- تم بنجاح ايقاف البايو الوقتي**")
         return await edit_delete(event, "**- البايو الوقتي غير شغال اصلا**")
     if input_str == "وقتي كروب" or input_str == "وقتية دردشة":
+        group = get_autogroup()
         if get_autogroup() is not None:
             del_autogroup()
+            await event.client(
+                functions.channels.EditTitleRequest(
+                    channel=await sbb_b.get_entity(int(group)), title="NAME"
+                )
+            )
             return await edit_delete(event, "**- تم بنجاح ايقاف الدردشة الوقتية**")
         return await edit_delete(event, "**- الدردشة الوقتية غير شغالة اصلا**")
     END_CMDS = [

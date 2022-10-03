@@ -115,7 +115,7 @@ async def startupmessage():
         if BOTLOG:
             Config.JMTHONLOGO = await sbb_b.tgbot.send_file(
                 BOTLOG_CHATID,
-                "https://telegra.ph/file/4c47d1cfb5b2451b5c636.jpg",
+                "https://telegra.ph/file/38f1da5a59d26898fde3b.jpg",
                 caption="**تم تشغيل سورس ريك ثون بنجاح لعرض الاوامر ارسل .الاوامر**",
                 buttons=[(Button.url("كروب المساعدة", "https://t.me/rickthon_group"),)],
             )

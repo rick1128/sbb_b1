@@ -36,7 +36,7 @@ async def amireallyalive(event):
     ms = (end - start).microseconds / 1000
     _, check_sgnirts = check_data_base_heal_th()
     EMOJI = gvarstatus("ALIVE_EMOJI") or "  - "
-    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**سورس ريك ثون يعمل بنجاح**"
+    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "** [ . 父 𝗥𝗜𝗖𝗞𝗧𝗛𝗢𝗡 𝗜𝗦 𝗪𝗢𝗥𝗞𝗜𝗡𝗚 ✓ 父 . ] (t.me/rickthon)**"
     JMTHON_IMG = gvarstatus("ALIVE_PIC")
     caption = jmthon_caption.format(
         ALIVE_TEXT=ALIVE_TEXT,
@@ -71,21 +71,21 @@ async def amireallyalive(event):
 
 
 temp = """{ALIVE_TEXT}
-**{EMOJI} قاعدة البيانات :** `{dbhealth}`
-**{EMOJI} اصدار التيليثون:** `{telever}`
-**{EMOJI} اصدار ريك ثون :** `{jmver}`
-**{EMOJI} اصدار البايثون :** `{pyver}`
-**{EMOJI} الوقت :** `{uptime}`
-**{EMOJI} المالك:** {mention}"""
+**{EMOJI} ⿻┊ 𝚃𝚑𝚎 𝚍𝚊𝚝𝚊𝚋𝚊𝚜𝚎𖠄 :** `{dbhealth}`
+**{EMOJI} ⿻┊ 𝚃𝚎𝚕𝚎𝚝𝚑𝚘𝚗 𖠄:** `{telever}`
+**{EMOJI} ⿻┊ 𝚁𝚒𝚌𝚔𝚃𝚑𝚘𝚗 :** `{jmver}`
+**{EMOJI} ⿻┊ 𝙿𝚈𝚃𝙷𝙾𝙽 𖠄 :** `{pyver}`
+**{EMOJI} ‌‎⿻┊‌‎‌‎𝚄𝙿𝚃𝙸𝙼𝙴 𖠄  :** `{uptime}`
+**{EMOJI} ‎⿻┊‌‎‌‎𝙽𝙰𝙼𝙴 𖠄:** {mention}"""
 
 
 def jmthonalive_text():
     EMOJI = gvarstatus("ALIVE_EMOJI") or "  ✥ "
-    jmthon_caption = "**سورس ريك ثون يعمل بنجاح**\n"
-    jmthon_caption += f"**{EMOJI} اصدار التيليثون :** `{version.__version__}\n`"
-    jmthon_caption += f"**{EMOJI} اصدار ريك ثون :** `{jmthonversion}`\n"
-    jmthon_caption += f"**{EMOJI} اصدار البايثون :** `{python_version()}\n`"
-    jmthon_caption += f"**{EMOJI} المالك:** {mention}\n"
+    jmthon_caption = "**[ . 父 𝗥𝗜𝗖𝗞𝗧𝗛𝗢𝗡 𝗜𝗦 𝗪𝗢𝗥𝗞𝗜𝗡𝗚 ✓ 父 . ] (t.me/rickthon)**\n"
+    jmthon_caption += f"**{EMOJI} ‌‎⿻┊ 𝚃𝚎𝚕𝚎𝚝𝚑𝚘𝚗 𖠄:** `{version.__version__}\n`"
+    jmthon_caption += f"**{EMOJI} ‌‎⿻┊ 𝚁𝚒𝚌𝚔𝚃𝚑𝚘𝚗 𖠄:** `{jmthonversion}`\n"
+    jmthon_caption += f"**{EMOJI} ‌‎⿻┊ 𝙿𝚈𝚃𝙷𝙾𝙽 𖠄:** `{python_version()}\n`"
+    jmthon_caption += f"**{EMOJI} ‎⿻┊‌‎‌‎𝙽𝙰𝙼𝙴 𖠄:** {mention}\n"
     return jmthon_caption
 
 

@@ -1,5 +1,5 @@
 # =============================
-# |         RickThon  - P_J_I          |
+# |        X7_CM - RICKTHON - P_J_I           |
 # =============================
 
 import os
@@ -9,7 +9,8 @@ from telegraph import exceptions, upload_file
 from sbb_b import sbb_b
 
 from ..core.managers import edit_or_reply
-from ..helpers.utils import _cattools, reply_id
+from ..helpers.utils import _jmthonutils as _sbb_btools
+from ..helpers.utils import reply_id
 from . import convert_toimage, deEmojify, phcomment, threats, trap, trash
 
 plugin_category = "fun"

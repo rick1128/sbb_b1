@@ -9,6 +9,7 @@ from sbb_b import sbb_b
 from ..Config import Config
 from ..core import check_owner
 
+ROZ_PIC = "https://telegra.ph/file/1aa39c00c1a7f58c5b454.jpg"
 ROE = "** هـذه هي قائمة اوامـر سـورس ريك ثون **"
 ROZADM = "من هنا يمكنك ايجاد جميع"
 RAZAN = Config.TG_BOT_USERNAME

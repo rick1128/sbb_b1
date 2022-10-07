@@ -71,7 +71,7 @@ async def amireallyalive(event):
 
 
 temp = """{ALIVE_TEXT}
-**⿻┊ 𝚃𝚑𝚎 𝚍𝚊𝚝𝚊𝚋𝚊𝚜𝚎𖠄 :** `𝗜𝗦 𝗪𝗢𝗥𝗞𝗜𝗡𝗚 ✓`
+**⿻┊ 𝚃𝚑𝚎 𝚍𝚊𝚝𝚊𝚋𝚊𝚜𝚎𖠄 :** `𝗜𝗦 𝗪𝗢𝗥𝗞𝗜𝗡𝗚`
 **⿻┊ 𝚃𝚎𝚕𝚎𝚝𝚑𝚘𝚗 𖠄:** `{telever}`
 **⿻┊ 𝚁𝚒𝚌𝚔𝚃𝚑𝚘𝚗 :** `{jmver}`
 **⿻┊ 𝙿𝚈𝚃𝙷𝙾𝙽 𖠄 :** `{pyver}`
@@ -147,4 +147,4 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             await event.answer([result] if result else None)
 
 
-# edit by ~ @x7_cm
+# edit by ~ @P_J_I

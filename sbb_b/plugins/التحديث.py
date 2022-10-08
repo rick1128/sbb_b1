@@ -250,7 +250,7 @@ async def upstream(event):
             f"⌔∮ يبدو انك نصبت ريكثون عبر السيرفر يرجى ارسال `{cmdhd}تحديث الان`",
         )
     event = await edit_or_reply(event, "⌔∮ يتم الان الوصول الى معلومات التحديث انتظر")
-    off_repo = "https://github.com/rickthon1/rickthon"
+    off_repo = "https://github.com/rickthon/rickthon"
     os.chdir("/app")
     try:
         txt = "**⌔∮ عذرا لم يتم اكمال التحديث بسبب بعض الاخطاء " + "**اللوگ:**\n"

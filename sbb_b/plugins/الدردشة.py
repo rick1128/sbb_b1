@@ -99,7 +99,7 @@ async def _(event):
     groups_only=True,
 )
 async def kickme(leave):
-    await leave.edit("**- حسنا الان انا سأغادر المجموعة\n مفعل ريك ثون اني @rickthon**")
+    await leave.edit("**- حسنا الان انا سأغادر المجموعة\n @rickthon**")
     await leave.client.kick_participant(leave.chat_id, "me")
 
 
